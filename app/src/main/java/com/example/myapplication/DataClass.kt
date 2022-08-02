@@ -8,7 +8,7 @@ data class DataClass(
     val equipmentId: String,
     val status: String,
     val requestedBy: String,
-    val acceptedBy: Any,
+    val acceptedBy: Any?,
     val author: String,
     val category: String,
     val locations: Locations,
@@ -18,15 +18,15 @@ data class DataClass(
     val address: String,
     val startDate: String,
     val endDate: String,
-    val description: Any,
-    val prolongDates: List<Any>,
-    val releaseDates: List<Any>,
+    val description: Any?,
+    val prolongDates: List<Any?>,
+    val releaseDates: List<Any?>,
     val isDummy: Boolean,
     val hasDriver: Boolean,
-    val overwriteDate: Any,
-    val metaInfo: Any,
-    val warehouseId: Any,
-    val rentalDescription: Any,
+    val overwriteDate: Any?,
+    val metaInfo: Any?,
+    val warehouseId: Any?,
+    val rentalDescription: Any?,
     val internalTransportations: InternalTransportations,
     val startDateMilliseconds: Long,
     val endDateMilliseconds: Long,
@@ -55,10 +55,10 @@ data class DataClass(
         val projectRequestId: String,
         val pickUpDate: String,
         val deliveryDate: String,
-        val description: Any,
+        val description: Any?,
         val status: String,
-        val startDateOption: Any,
-        val endDateOption: Any,
+        val startDateOption: Any?,
+        val endDateOption: Any?,
         val pickUpLocation: PickUpLocation,
         val deliveryLocation: DeliveryLocation,
     ) {
@@ -85,47 +85,47 @@ data class DataClass(
         val specifications: List<Specifications>,
         val weight: Int,
         @Json(name = "additional_specifications")
-        val additionalSpecifications: Any,
+        val additionalSpecifications: Any?,
         val structureId: String,
         val organizationId: String,
-        val beaconType: Any,
+        val beaconType: Any?,
         val beaconId: String,
         val beaconVendor: String,
         val RFID: String,
-        val dailyPrice: Any,
-        val inactive: Any,
+        val dailyPrice: Any?,
+        val inactive: Any?,
         val tag: Tag,
-        val telematicBox: Any,
+        val telematicBox: Any?,
         val createdAt: String,
         @Json(name = "special_number")
-        val specialNumber: Any,
+        val specialNumber: Any?,
         @Json(name = "last_check")
         val lastCheck: String,
         @Json(name = "next_check")
         val nextCheck: String,
         @Json(name = "responsible_person")
-        val responsiblePerson: Any,
+        val responsiblePerson: Any?,
         @Json(name = "test_type")
-        val testType: Any,
+        val testType: Any?,
         @Json(name = "unique_equipment_id")
         val uniqueEquipmentId: String,
         @Json(name = "bgl_number")
         val bglNumber: String,
         @Json(name = "serial_number")
-        val serialNumber: Any,
-        val inventory: Any,
+        val serialNumber: Any?,
+        val inventory: Any?,
         val warehouseId: String,
-        val trackingTag: Any,
-        val workingHours: Any,
+        val trackingTag: Any?,
+        val workingHours: Any?,
         @Json(name = "navaris_criteria")
-        val navarisCriteria: Any,
+        val navarisCriteria: Any?,
         @Json(name = "dont_send_to_as400")
         val dontSendToAs400: Boolean,
         val model: Model,
         val brand: Brand,
         val category: Category,
         val structure: Structure,
-        val wareHouse: Any,
+        val wareHouse: Any?,
         val equipmentMedia: List<EquipmentMedia>,
         val telematics: List<Telematics>,
         val isMoving: Boolean,
@@ -139,7 +139,7 @@ data class DataClass(
         data class Tag(
             val date: String,
             val authorName: String,
-            val media: List<Any>,
+            val media: List<Any?>,
         )
 
         data class Model(
@@ -168,7 +168,7 @@ data class DataClass(
             @Json(name = "name_de")
             val nameDe: String,
             val createdAt: String,
-            val media: List<Any>,
+            val media: List<Any?>,
         )
 
         data class Structure(
